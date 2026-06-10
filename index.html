@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jovania Araújo - Psicologia Clínica</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#181d12",
+                        "on-surface-variant": "#4b463e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f6f2f5",
+                        "primary-fixed": "#ede1cc",
+                        "on-background": "#1c1b1d",
+                        "surface": "#fcf8fb",
+                        "secondary-container": "#dee6cb",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fcf8fb",
+                        "primary": "#665d4d",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#5f6752",
+                        "secondary": "#59614c",
+                        "on-surface": "#1c1b1d",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#424936",
+                        "outline-variant": "#cdc5ba",
+                        "inverse-on-surface": "#f3f0f2",
+                        "tertiary-fixed-dim": "#c4c9b7",
+                        "background": "#fcf8fb",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#605848",
+                        "inverse-primary": "#d1c5b1",
+                        "on-tertiary-container": "#565b4d",
+                        "on-primary-fixed": "#211b0e",
+                        "inverse-surface": "#313032",
+                        "surface-container-highest": "#e5e1e4",
+                        "tertiary-container": "#ced3c1",
+                        "outline": "#7c766d",
+                        "tertiary": "#5b6052",
+                        "on-primary-fixed-variant": "#4e4637",
+                        "primary-fixed-dim": "#d1c5b1",
+                        "surface-dim": "#dcd9dc",
+                        "secondary-fixed": "#dee6cb",
+                        "surface-container": "#f0edf0",
+                        "tertiary-fixed": "#e0e5d2",
+                        "surface-tint": "#665d4d",
+                        "surface-variant": "#e5e1e4",
+                        "primary-container": "#dbcfbb",
+                        "on-tertiary-fixed-variant": "#44493b",
+                        "surface-container-high": "#eae7ea",
+                        "on-secondary-fixed": "#171e0d",
+                        "secondary-fixed-dim": "#c2cab0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1200px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-xl": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 40px 60px -15px rgba(28, 27, 29, 0.1);
+        }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-item.active .accordion-content { max-height: 200px; }
+        .accordion-item.active .arrow-icon { transform: rotate(180deg); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/40 shadow-xl">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">Jovania Araújo</span>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary py-1" href="#inicio">Início</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-1" href="#servicos">Serviços</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-1" href="#depoimentos">Depoimentos</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-1" href="#faq">FAQ</a>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-2xl font-label-md text-label-md hover:opacity-80 transition-opacity" href="https://wa.me/55" target="_blank">WhatsApp</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+<!-- Mobile Dropdown -->
+<div class="hidden md:hidden bg-surface-container-lowest border-t border-outline-variant px-margin-mobile py-6 flex flex-col gap-4" id="mobile-menu">
+<a class="text-primary font-bold" href="#inicio">Início</a>
+<a class="text-on-surface-variant" href="#servicos">Serviços</a>
+<a class="text-on-surface-variant" href="#depoimentos">Depoimentos</a>
+<a class="text-on-surface-variant" href="#faq">FAQ</a>
+<a class="text-primary font-bold" href="https://wa.me/55" target="_blank">WhatsApp</a>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden" id="inicio">
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-gutter items-center">
+<div class="reveal">
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary mb-6">
+                    Recupere seu equilíbrio emocional com atendimento humanizado e especializado
+                </h1>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                    Psicoterapia individual online e presencial em BH com foco em ansiedade, depressão e autoconhecimento.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-primary text-on-primary h-14 px-10 rounded-2xl flex items-center justify-center font-label-md text-label-md hover:scale-105 transition-transform shadow-xl" href="https://wa.me/55" target="_blank">
+                        Agendar Minha Consulta
+                    </a>
+</div>
+</div>
+<div class="relative reveal delay-200">
+<div class="rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] md:aspect-auto">
+<img alt="Psicóloga Jovania Araújo" class="w-full h-full object-cover" data-alt="A professional and friendly Brazilian psychologist in her mid-40s with a warm smile, sitting in a serene and upscale clinical office. The room is decorated with soft sand colors, minimalist wooden furniture, and lush green plants. High-key natural lighting streams through a large window, creating a soft, welcoming glow that highlights her professional yet approachable demeanor. The overall aesthetic is one of calm professionalism and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUNllSmhHSSD_C2uiNyEuRGIS0dQaLdYNsTT4SwQH74GpmjjebbkcywP92D5lc4TrUYMlTHgv14Yacbvy0VQY8Wt4JXI6JRFygTrdJIlgpYWOr44SKrCaS7G1OVe0pBXQJ09MGWcu8-0LLPY3lmb396xJNwtMHSbLbhAz-dfj7hNwO3UAgrf0LrUjMZhngR-EHxrWkS8c_p7vX3j7P7xbQtQwTq0UxGp0BGXiH03AeWCqIBBE5yPg8Kr9NBNKq-vWwemsi6o98HwQ"/>
+</div>
+<!-- Glass accent -->
+<div class="absolute -bottom-8 -left-8 glass-card p-6 rounded-2xl hidden md:block max-w-[240px]">
+<p class="text-primary font-bold italic">"O autoconhecimento é a chave para uma vida com propósito e leveza."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="bg-surface-container-low py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Você sente que o peso emocional está difícil de carregar?</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Muitas vezes, ignoramos sinais que o nosso corpo e mente nos dão. Reconhecer é o primeiro passo para a cura.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="glass-card p-8 rounded-2xl reveal delay-100">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">sentiment_very_dissatisfied</span>
+<h3 class="font-bold text-xl mb-3 text-primary">Cansaço mental</h3>
+<p class="text-on-surface-variant">Sensação de esgotamento constante, onde até pequenas tarefas parecem exigir um esforço hercúleo.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl reveal delay-200">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">bolt</span>
+<h3 class="font-bold text-xl mb-3 text-primary">Ansiedade constante</h3>
+<p class="text-on-surface-variant">Preocupações excessivas com o futuro e sintomas físicos que paralisam sua rotina e bem-estar.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl reveal delay-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">groups</span>
+<h3 class="font-bold text-xl mb-3 text-primary">Dificuldade em relacionamentos</h3>
+<p class="text-on-surface-variant">Padrões repetitivos de conflitos ou isolamento que impedem conexões profundas e saudáveis.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop" id="servicos">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4 reveal">
+<div>
+<span class="text-secondary font-bold tracking-widest uppercase text-sm">Serviços Especializados</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-2">Como posso te ajudar hoje?</h2>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<div class="group p-8 rounded-2xl border border-outline-variant hover:border-primary hover:bg-white transition-all duration-300 reveal delay-100">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">psychology_alt</span>
+</div>
+<h3 class="font-bold text-xl mb-4">Terapia Cognitivo-Comportamental</h3>
+<p class="text-on-surface-variant mb-6">Uma abordagem prática e focada em resultados para reestruturar pensamentos e comportamentos disfuncionais.</p>
+</div>
+<div class="group p-8 rounded-2xl border border-outline-variant hover:border-primary hover:bg-white transition-all duration-300 reveal delay-200">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">favorite</span>
+</div>
+<h3 class="font-bold text-xl mb-4">Terapia de Casal</h3>
+<p class="text-on-surface-variant mb-6">Mediação de conflitos e fortalecimento de vínculos afetivos através de uma comunicação assertiva e empática.</p>
+</div>
+<div class="group p-8 rounded-2xl border border-outline-variant hover:border-primary hover:bg-white transition-all duration-300 reveal delay-300">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">explore</span>
+</div>
+<h3 class="font-bold text-xl mb-4">Orientação Vocacional</h3>
+<p class="text-on-surface-variant mb-6">Suporte estratégico para escolhas de carreira e transições profissionais baseadas no seu perfil e valores.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Differentials Section -->
+<section class="bg-surface py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 items-center">
+<div class="relative reveal">
+<img alt="Sessão de terapia acolhedora" class="rounded-2xl shadow-2xl w-full" data-alt="A cinematic, low-angle shot of a therapeutic session in a modern, light-filled office. Two comfortable, upholstered chairs face each other on a plush, high-pile rug. Warm sunlight filters through sheer linen curtains, casting soft shadows. The atmosphere is quiet, intimate, and safe, emphasizing a professional clinical environment that feels like a sanctuary. Soft olive and zinc tones dominate the scene, reflecting a premium medical-grade aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0OcyBKD50WacAB1BlLnwpfjQks76bIxQJWTy3pb15BKsVpIsoaZB4BoL_ZxrcliO6vJVaRyILouevEqwD-61d9UvKmaoUz3hToH0dGItbpM-D3hDB16lVRifw5WRjVhwl9NwkpcVRB2GobzvsXDdMK-ECTy6vgqY2rTktlDVAdFSKwT4kJ1ivU1oBVh7PULIOjHTko_yzrN0V9G41AD4uqMboZXsX1eBubSe9mJa0M1XrJLP368_syuLFpd3Zk3uO4QY_sTYuoW8"/>
+</div>
+<div class="reveal delay-200">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-8">Por que escolher o meu acompanhamento?</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<strong class="text-lg block mb-1">Ambiente seguro e sigiloso</strong>
+<p class="text-on-surface-variant">Espaço físico e digital preparado para garantir total privacidade e liberdade de expressão.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<strong class="text-lg block mb-1">Ética profissional rigorosa</strong>
+<p class="text-on-surface-variant">Atuação pautada no Código de Ética Profissional do Psicólogo, com respeito e integridade.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<strong class="text-lg block mb-1">Resultados comprovados</strong>
+<p class="text-on-surface-variant">Metodologias baseadas em evidências científicas que promovem mudanças reais e duradouras.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Social Proof Section -->
+<section class="bg-primary text-on-primary py-section-gap px-margin-mobile md:px-margin-desktop" id="depoimentos">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-center mb-16 reveal">Histórias de Transformação</h2>
+<!-- Simple Slider Container -->
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white/10 p-8 rounded-2xl backdrop-blur-md reveal delay-100">
+<div class="flex gap-1 mb-4 text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic mb-6">"A Jovania me ajudou a passar pelo momento mais difícil da minha vida com uma clareza que eu nunca imaginei ter. Sou eternamente grata."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container"></div>
+<span class="font-bold">Mariana S.</span>
+</div>
+</div>
+<div class="bg-white/10 p-8 rounded-2xl backdrop-blur-md reveal delay-200">
+<div class="flex gap-1 mb-4 text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic mb-6">"Profissional impecável. O foco na TCC me deu ferramentas práticas para lidar com a ansiedade no trabalho todos os dias."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container"></div>
+<span class="font-bold">Ricardo M.</span>
+</div>
+</div>
+<div class="bg-white/10 p-8 rounded-2xl backdrop-blur-md reveal delay-300">
+<div class="flex gap-1 mb-4 text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic mb-6">"O atendimento online é fantástico. Mesmo à distância, me sinto totalmente acolhida e segura nas nossas sessões semanais."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container"></div>
+<span class="font-bold">Fernanda L.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop" id="faq">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary text-center mb-12 reveal">Dúvidas Frequentes</h2>
+<div class="space-y-4">
+<div class="accordion-item border border-outline-variant rounded-2xl reveal delay-100">
+<button class="w-full px-8 py-6 flex justify-between items-center text-left hover:bg-surface-container transition-colors rounded-2xl">
+<span class="font-bold text-lg">Como funciona a primeira sessão?</span>
+<span class="material-symbols-outlined arrow-icon transition-transform">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="px-8 pb-6 text-on-surface-variant">A primeira sessão é um momento de acolhimento e escuta inicial, onde entendemos suas demandas, objetivos e como a terapia pode te auxiliar.</p>
+</div>
+</div>
+<div class="accordion-item border border-outline-variant rounded-2xl reveal delay-200">
+<button class="w-full px-8 py-6 flex justify-between items-center text-left hover:bg-surface-container transition-colors rounded-2xl">
+<span class="font-bold text-lg">Quanto tempo dura cada consulta?</span>
+<span class="material-symbols-outlined arrow-icon transition-transform">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="px-8 pb-6 text-on-surface-variant">As sessões individuais têm duração média de 50 minutos, garantindo um tempo de qualidade para o aprofundamento das questões trazidas.</p>
+</div>
+</div>
+<div class="accordion-item border border-outline-variant rounded-2xl reveal delay-300">
+<button class="w-full px-8 py-6 flex justify-between items-center text-left hover:bg-surface-container transition-colors rounded-2xl">
+<span class="font-bold text-lg">Atende convênios médicos?</span>
+<span class="material-symbols-outlined arrow-icon transition-transform">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="px-8 pb-6 text-on-surface-variant">Trabalho com atendimento particular, mas emito recibos para que você possa solicitar o reembolso junto ao seu plano de saúde.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Banner -->
+<section class="px-margin-mobile md:px-margin-desktop pb-section-gap">
+<div class="max-w-container-max mx-auto bg-primary rounded-[2rem] p-12 md:p-24 text-center relative overflow-hidden reveal">
+<div class="relative z-10">
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-primary mb-6">Pronta para dar o primeiro passo?</h2>
+<p class="text-on-primary/80 text-body-lg mb-12 max-w-xl mx-auto">Sua saúde mental é sua maior prioridade. Vamos construir juntos um caminho de maior leveza e bem-estar.</p>
+<a class="bg-on-primary text-primary h-16 px-12 rounded-2xl inline-flex items-center justify-center font-bold text-lg hover:scale-105 transition-transform shadow-2xl" href="https://wa.me/55" target="_blank">
+                    Conversar via WhatsApp
+                </a>
+</div>
+<!-- Decorative circle -->
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-20 px-margin-mobile md:px-margin-desktop border-t border-outline-variant">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="max-w-xs">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight">Jovania Araújo</span>
+</div>
+<p class="text-on-surface-variant text-sm">Psicóloga Clínica CRP 04/XXXXX. Especialista em saúde mental e equilíbrio emocional.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div>
+<h4 class="font-bold mb-4 text-primary">Links</h4>
+<ul class="space-y-2 text-on-surface-variant">
+<li><a class="hover:text-primary" href="#inicio">Início</a></li>
+<li><a class="hover:text-primary" href="#servicos">Serviços</a></li>
+<li><a class="hover:text-primary" href="#depoimentos">Depoimentos</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-primary">Legal</h4>
+<ul class="space-y-2 text-on-surface-variant">
+<li><a class="hover:text-primary" href="#">Privacidade</a></li>
+<li><a class="hover:text-primary" href="#">Termos</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-1">
+<h4 class="font-bold mb-4 text-primary">Contato</h4>
+<p class="text-on-surface-variant mb-2">contato@jovaniaaraujo.com.br</p>
+<p class="text-on-surface-variant">Belo Horizonte, MG</p>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-16 pt-8 border-t border-outline-variant text-center text-on-surface-variant text-sm">
+            © 2024 Jovania Araújo - Psicologia Clínica. Todos os direitos reservados.
+        </div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<a class="fixed bottom-8 right-8 z-50 w-14 h-14 bg-secondary text-on-secondary rounded-full flex items-center justify-center shadow-xl hover:scale-110 hover:shadow-2xl transition-all duration-300 animate-bounce" href="https://wa.me/55" target="_blank">
+<span class="material-symbols-outlined text-2xl">chat</span>
+</a>
+<script>
+        // Reveal on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Accordion Logic
+        document.querySelectorAll('.accordion-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body></html>
